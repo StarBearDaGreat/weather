@@ -1,0 +1,254 @@
+:root {
+  --font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  
+  --bg-color: #f0f4f8;
+  --text-color: #333;
+  --card-bg: rgba(255, 255, 255, 0.6);
+  --accent-color: #4a90e2;
+}
+
+html.theme_sunny_hot {
+  --bg-color: #FFF2D1;
+  --text-color: #5C3A21;
+  --card-bg: rgba(255, 255, 255, 0.5);
+  --accent-color: #FFB347;
+}
+
+html.theme_sunny_cold {
+  --bg-color: #E0F2FE;
+  --text-color: #0C4A6E;
+  --card-bg: rgba(255, 255, 255, 0.6);
+  --accent-color: #38BDF8;
+}
+
+html.theme_cloudy_mild {
+  --bg-color: #E2E8F0;
+  --text-color: #334155;
+  --card-bg: rgba(255, 255, 255, 0.6);
+  --accent-color: #94A3B8;
+}
+
+html.theme_rainy_cold {
+  --bg-color: #94A3B8;
+  --text-color: #1E293B;
+  --card-bg: rgba(255, 255, 255, 0.4);
+  --accent-color: #475569;
+}
+
+html.theme_stormy {
+  --bg-color: #334155;
+  --text-color: #F8FAFC;
+  --card-bg: rgba(0, 0, 0, 0.3);
+  --accent-color: #CBD5E1;
+}
+
+html.theme_night {
+  --bg-color: #1E1B4B;
+  --text-color: #E0E7FF;
+  --card-bg: rgba(255, 255, 255, 0.1);
+  --accent-color: #A5B4FC;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: var(--font-family);
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  transition: background-color 0.5s ease, color 0.5s ease;
+  min-height: 100vh;
+}
+
+.app-container {
+  max-width: 480px;
+  margin: 0 auto;
+  padding: 20px;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.location-search {
+  display: flex;
+  gap: 10px;
+}
+
+.location-search input {
+  flex: 1;
+  padding: 12px 16px;
+  border-radius: 20px;
+  border: none;
+  background: var(--card-bg);
+  backdrop-filter: blur(10px);
+  color: var(--text-color);
+  font-size: 16px;
+  outline: none;
+}
+
+.location-search button {
+  padding: 10px 16px;
+  border-radius: 20px;
+  border: none;
+  background: var(--accent-color);
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+  transition: opacity 0.2s;
+}
+
+.location-search button:active {
+  opacity: 0.8;
+}
+
+.current-conditions {
+  text-align: center;
+  padding: 20px 0;
+}
+
+.current-conditions h2 {
+  font-size: 24px;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+.temp-large {
+  font-size: 72px;
+  font-weight: 800;
+  line-height: 1;
+  margin-bottom: 10px;
+}
+
+.condition-desc {
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+
+.condition-details {
+  font-size: 14px;
+  opacity: 0.8;
+}
+
+.outfit-card {
+  background: var(--card-bg);
+  backdrop-filter: blur(10px);
+  border-radius: 24px;
+  padding: 20px;
+  text-align: center;
+}
+
+.outfit-card h3 {
+  font-size: 14px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  opacity: 0.7;
+  margin-bottom: 15px;
+}
+
+.outfit-image-container {
+  width: 200px;
+  height: 250px;
+  margin: 0 auto 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 16px;
+  overflow: hidden;
+}
+
+.outfit-image {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+}
+
+.outfit-label {
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.hourly-forecast {
+  background: var(--card-bg);
+  backdrop-filter: blur(10px);
+  border-radius: 24px;
+  padding: 20px;
+  overflow-x: auto;
+  scrollbar-width: none;
+}
+.hourly-forecast::-webkit-scrollbar {
+  display: none;
+}
+
+.hourly-scroll {
+  display: flex;
+  gap: 20px;
+}
+
+.hourly-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  min-width: 50px;
+}
+
+.hourly-icon {
+  font-size: 24px;
+}
+
+.weekly-forecast {
+  background: var(--card-bg);
+  backdrop-filter: blur(10px);
+  border-radius: 24px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.weekly-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.weekly-day {
+  flex: 1;
+  font-weight: 500;
+}
+
+.weekly-icon {
+  font-size: 20px;
+  width: 40px;
+  text-align: center;
+}
+
+.weekly-temps {
+  display: flex;
+  gap: 15px;
+  width: 80px;
+  justify-content: flex-end;
+}
+
+.temp-min {
+  opacity: 0.6;
+}
+
+.error-message {
+  background: rgba(255, 0, 0, 0.1);
+  color: #ff3333;
+  padding: 15px;
+  border-radius: 12px;
+  text-align: center;
+}
+
+.loading, .empty-state {
+  text-align: center;
+  padding: 40px 20px;
+  opacity: 0.7;
+}
