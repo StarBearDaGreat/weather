@@ -1,13 +1,40 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Weather & Outfit App</title>
-  </head>
-  <body>
-    <div id="root"></div>
-    <script type="module" src="/src/main.jsx"></script>
-  </body>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Weather & Outfit App</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="theme_cloudy_mild">
+  <div class="app-container">
+    <header>
+      <form id="search-form" class="location-search">
+        <input type="text" id="search-input" placeholder="Search any city..." />
+        <button type="submit" id="search-button">🔍</button>
+      </form>
+    </header>
+    
+    <main id="main-content">
+      <div id="loading" class="loading">Loading...</div>
+      <div id="error-message" class="error-message" style="display: none;"></div>
+      
+      <div id="empty-state" class="empty-state" style="display: none;">
+        <p>Search for a city to get the weather and outfit suggestion.</p>
+      </div>
+
+      <div id="weather-content" style="display: none;">
+        <div id="current-conditions" class="current-conditions"></div>
+        <div id="outfit-card" class="outfit-card"></div>
+        
+        <div class="hourly-forecast">
+          <div id="hourly-scroll" class="hourly-scroll"></div>
+        </div>
+        
+        <div id="weekly-forecast" class="weekly-forecast"></div>
+      </div>
+    </main>
+  </div>
+  <script src="script.js"></script>
+</body>
 </html>
